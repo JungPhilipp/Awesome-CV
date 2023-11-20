@@ -207,6 +207,7 @@
 
 % For elements of skill
 \newcommand*{\skilltypestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
+\newcommand*{\skilltypestylebox}[1]{{\fontsize{8pt}{1em}\bodyfont\bfseries\color{graytext} #1}}
 \newcommand*{\skillsetstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\color{text} #1}}
 
 % For elements of the cover letter
@@ -748,6 +749,20 @@
   \end{justify}
   \vspace{-4.0mm}
 }
+
+% Define an environment for nested cvitems(for cventry)
+\newenvironment{cvitems_nested}{
+  %\vspace{-4mm}
+  \begin{justify}
+  \begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+    \setlength{\parskip}{0pt}
+    \renewcommand{\labelitemi}{\bullet}
+}{
+  \end{itemize}
+  \end{justify}
+  %\vspace{-2mm}
+}
+
 
 
 %-------------------------------------------------------------------------------
